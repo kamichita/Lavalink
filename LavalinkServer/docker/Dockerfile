@@ -5,8 +5,6 @@ RUN groupadd -g 322 lavalink && \
 
 WORKDIR /opt/Lavalink
 
-COPY application.yml /opt/Lavalink/application.yml  # ←追加！
-
 RUN chown -R lavalink:lavalink /opt/Lavalink
 
 USER lavalink
