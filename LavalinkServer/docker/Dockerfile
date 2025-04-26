@@ -10,6 +10,7 @@ RUN chown -R lavalink:lavalink /opt/Lavalink
 
 USER lavalink
 
-COPY LavalinkServer/build/libs/Lavalink.jar Lavalink.jar
+# Lavalink.jar を GitHub からダウンロード
+RUN wget https://github.com/lavalink-devs/Lavalink/releases/download/4.0.8/Lavalink.jar -O Lavalink.jar
 
 ENTRYPOINT ["java", "-Djdk.tls.client.protocols=TLSv1.1,TLSv1.2", "-jar", "Lavalink.jar"]
