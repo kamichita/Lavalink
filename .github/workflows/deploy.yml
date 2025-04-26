@@ -1,0 +1,16 @@
+name: Build on Windows
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Run Gradle on Windows
+      run: .\gradlew.bat build
